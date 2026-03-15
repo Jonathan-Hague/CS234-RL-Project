@@ -23,10 +23,9 @@ DB_URL = os.getenv(
 
 
 def extract_from_postgres() -> list:
-    """Pull conversation data from the production database.
-
+    """
     NOTE: The specific table names, column names, and JOIN structure have been
-    redacted from this public release to avoid exposing the production schema.
+    redacted from this public release to avoid exposing the internal schema.
     The query shape below is representative; adapt it to your own schema.
     Required columns per row (mapped to the keys used in _group_into_episodes):
       log_id, conversation_id, diagram_mode, total_input_tokens, diagram_tokens,
