@@ -1,6 +1,4 @@
-# CS234: RL-Based Context Selection for RAG Systems
-
-**Course**: CS234: Reinforcement Learning, Stanford University, Winter 2026
+# RL-Based Context Selection for RAG Systems
 
 ## Overview
 
