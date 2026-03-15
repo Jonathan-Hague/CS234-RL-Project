@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Sanitize episode data files for public release.
+"""I sanitized episode data files for public release.
 
-Strips user_content and assistant_content (which contain proprietary
+Stripping some content (which contain proprietary
 diagram logic and production query text) from episodes.json and
 episodes_scored.json. All numeric training fields are preserved intact.
 
-Writes sanitized output to:
+This writes sanitized output to:
   data/episodes.public.json
   data/episodes_scored.public.json
 
