@@ -23,7 +23,16 @@ DB_URL = os.getenv(
 
 
 def extract_from_postgres() -> list:
-    """Pull conversation data from the prompt_logs + messages tables."""
+    """Pull conversation data from the production database.
+
+    NOTE: The specific table names, column names, and JOIN structure have been
+    redacted from this public release to avoid exposing the production schema.
+    The query shape below is representative; adapt it to your own schema.
+    Required columns per row (mapped to the keys used in _group_into_episodes):
+      log_id, conversation_id, diagram_mode, total_input_tokens, diagram_tokens,
+      sources_tokens, user_message_tokens, rag_hits_count, ttft, feedback,
+      persona, flow_id, chat_id, created_at, user_content, assistant_content.
+    """
     try:
         import psycopg2
         import psycopg2.extras
@@ -37,39 +46,28 @@ def extract_from_postgres() -> list:
         print(f"[extract] Cannot connect to PostgreSQL: {e}")
         return []
 
+    # Schema redacted for public release — replace with your own table/column names.
     query = """
     SELECT
         pl.id                   AS log_id,
         pl.conversation_id,
-        pl.message_id,
         pl.diagram_mode,
         pl.total_input_tokens,
         pl.diagram_tokens,
         pl.sources_tokens,
         pl.user_message_tokens,
-        pl.persona,
-        pl.bypass_rag,
         pl.rag_hits_count,
+        pl.persona,
+        pl.created_at,
         m.ttft,
         m.feedback,
-        m.role,
         m.content               AS assistant_content,
-        (
-            SELECT m2.content
-            FROM messages m2
-            WHERE m2.chat_id = m.chat_id
-              AND m2.session_id = m.session_id
-              AND m2.role = 'user'
-              AND m2.id < m.id
-            ORDER BY m2.id DESC
-            LIMIT 1
-        )                       AS user_content,
+        NULL                    AS user_content,
         c.flow_id,
-        c.chat_id,
-        pl.created_at
-    FROM prompt_logs pl
-    LEFT JOIN messages m ON m.id = pl.message_id
-    LEFT JOIN chats c ON c.chat_id = pl.conversation_id
+        c.chat_id
+    FROM <prompt_logs_table> pl
+    LEFT JOIN <messages_table> m ON m.id = pl.message_id
+    LEFT JOIN <chats_table> c ON c.id = pl.conversation_id
     WHERE pl.diagram_mode IS NOT NULL
     ORDER BY pl.conversation_id, pl.created_at;
     """
