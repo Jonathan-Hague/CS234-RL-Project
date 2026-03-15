@@ -1,0 +1,152 @@
+{
+  "policies": {
+    "Random": {
+      "mean_reward": -3.596037163799212,
+      "std_reward": 2.498239872333157,
+      "mean_tokens_per_turn": 6006.375884016975,
+      "mode_distribution": {
+        "MINIMAL": 0.33112582781456956,
+        "BOUNDED": 0.31125827814569534,
+        "FULL": 0.3576158940397351
+      }
+    },
+    "Always-MINIMAL": {
+      "mean_reward": -3.0975306795700575,
+      "std_reward": 2.258244967411218,
+      "mean_tokens_per_turn": 5743.9599009900985,
+      "mode_distribution": {
+        "MINIMAL": 1.0,
+        "BOUNDED": 0.0,
+        "FULL": 0.0
+      }
+    },
+    "Always-FULL": {
+      "mean_reward": -5.1910587610632275,
+      "std_reward": 3.400652012777687,
+      "mean_tokens_per_turn": 6106.707425742575,
+      "mode_distribution": {
+        "MINIMAL": 0.0,
+        "BOUNDED": 0.0,
+        "FULL": 1.0
+      }
+    },
+    "Heuristic": {
+      "mean_reward": -4.027154659851884,
+      "std_reward": 2.401445079770755,
+      "mean_tokens_per_turn": 5916.797996228194,
+      "mode_distribution": {
+        "MINIMAL": 0.0,
+        "BOUNDED": 0.6871345029239766,
+        "FULL": 0.3128654970760234
+      }
+    },
+    "LinUCB": {
+      "mean_reward": -3.0434950628538737,
+      "std_reward": 2.3012170958189535,
+      "mean_tokens_per_turn": 6080.340405469117,
+      "mode_distribution": {
+        "MINIMAL": 0.1619047619047619,
+        "BOUNDED": 0.8380952380952381,
+        "FULL": 0.0
+      }
+    },
+    "Q-Learning": {
+      "mean_reward": -3.170412887441485,
+      "std_reward": 2.4628184978190824,
+      "mean_tokens_per_turn": 5870.996864686469,
+      "mode_distribution": {
+        "MINIMAL": 0.5629139072847682,
+        "BOUNDED": 0.23509933774834438,
+        "FULL": 0.20198675496688742
+      }
+    },
+    "DQN": {
+      "mean_reward": -2.822759315810763,
+      "std_reward": 2.136700085482301,
+      "mean_tokens_per_turn": 5362.393517208864,
+      "mode_distribution": {
+        "MINIMAL": 0.6549520766773163,
+        "BOUNDED": 0.29073482428115016,
+        "FULL": 0.054313099041533544
+      }
+    },
+    "PPO": {
+      "mean_reward": -3.0975306795700575,
+      "std_reward": 2.258244967411218,
+      "mean_tokens_per_turn": 5743.9599009900985,
+      "mode_distribution": {
+        "MINIMAL": 1.0,
+        "BOUNDED": 0.0,
+        "FULL": 0.0
+      }
+    }
+  },
+  "ablations": {
+    "features": {
+      "baseline": -3.200523225399298,
+      "features": {
+        "diagram_token_ratio": {
+          "reward": -2.886043315419117,
+          "importance": -0.31447990998018094
+        },
+        "conversation_turn": {
+          "reward": -3.1197489541684997,
+          "importance": -0.08077427123079817
+        },
+        "rag_hits": {
+          "reward": -3.4010827092914053,
+          "importance": 0.20055948389210743
+        },
+        "is_minimal": {
+          "reward": -2.991757559223654,
+          "importance": -0.20876566617564407
+        },
+        "is_bounded": {
+          "reward": -3.2075382403454102,
+          "importance": 0.007015014946112341
+        },
+        "is_full": {
+          "reward": -3.4656885992598596,
+          "importance": 0.2651653738605617
+        },
+        "has_feedback": {
+          "reward": -3.4235142602208963,
+          "importance": 0.22299103482159843
+        }
+      }
+    },
+    "reward_coeffs": {
+      "alpha_token=0": -0.07732067739900311,
+      "alpha_token=0.0001": -1.9188118349594843,
+      "alpha_token=0.0002 (default)": -3.200523225399298,
+      "alpha_token=0.0005": -7.349847583695623,
+      "alpha_token=0.001": -12.227025366339443,
+      "alpha_ttft=0": -2.3704452369741484,
+      "alpha_ttft=0.025": -2.8224477648965562,
+      "alpha_ttft=0.05 (default)": -3.200523225399298,
+      "alpha_ttft=0.1": -4.037915429490851
+    },
+    "data_source": {
+      "Real-Only": {
+        "mean_reward": -2.8450094512640103,
+        "std_reward": 2.3726416418156315,
+        "mean_tokens_per_turn": 5546.619471947194,
+        "mode_distribution": {
+          "MINIMAL": 0.6746575342465754,
+          "BOUNDED": 0.1643835616438356,
+          "FULL": 0.16095890410958905
+        }
+      },
+      "Augmented": {
+        "mean_reward": -3.2016639309202106,
+        "std_reward": 2.5029534377230336,
+        "mean_tokens_per_turn": 5657.652357378595,
+        "mode_distribution": {
+          "MINIMAL": 0.4967948717948718,
+          "BOUNDED": 0.34935897435897434,
+          "FULL": 0.15384615384615385
+        }
+      }
+    }
+  }
+}

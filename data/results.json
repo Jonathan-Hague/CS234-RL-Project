@@ -1,0 +1,52 @@
+{
+  "Heuristic": {
+    "mean_reward": -27.528282450000006,
+    "std_reward": 13.767998697209624,
+    "mean_tokens_per_turn": 6849.276095238095,
+    "mode_distribution": {
+      "MINIMAL": 0.0,
+      "BOUNDED": 0.7142857142857143,
+      "FULL": 0.2857142857142857
+    }
+  },
+  "Always-FULL": {
+    "mean_reward": -45.75572444444444,
+    "std_reward": 27.934573625131744,
+    "mean_tokens_per_turn": 6943.861714285714,
+    "mode_distribution": {
+      "MINIMAL": 0.0,
+      "BOUNDED": 0.0,
+      "FULL": 1.0
+    }
+  },
+  "Always-MINIMAL": {
+    "mean_reward": -8.63673741666667,
+    "std_reward": 4.6134921798215185,
+    "mean_tokens_per_turn": 6629.287023809524,
+    "mode_distribution": {
+      "MINIMAL": 1.0,
+      "BOUNDED": 0.0,
+      "FULL": 0.0
+    }
+  },
+  "Random": {
+    "mean_reward": -26.325548194444444,
+    "std_reward": 19.220925509935455,
+    "mean_tokens_per_turn": 6741.948976190475,
+    "mode_distribution": {
+      "MINIMAL": 0.34710743801652894,
+      "BOUNDED": 0.30578512396694213,
+      "FULL": 0.34710743801652894
+    }
+  },
+  "Q-Learning": {
+    "mean_reward": -11.1304064,
+    "std_reward": 7.3677871276186115,
+    "mean_tokens_per_turn": 6932.407666666667,
+    "mode_distribution": {
+      "MINIMAL": 0.84375,
+      "BOUNDED": 0.11363636363636363,
+      "FULL": 0.04261363636363636
+    }
+  }
+}

@@ -1,0 +1,47 @@
+# Private data files (contain production content — never commit)
+data/*.private.json
+
+# Academic documents (papers, slides, poster, proposals — not part of the codebase)
+CS234_FINAL.*
+CS234_MILESTONE.*
+CS234_SLIDES.*
+CS234_POSTER.*
+CS234_POSTER_V2.*
+CS234_PROPOSAL_READY_TO_SUBMIT.md
+CS234_PROJECT_PROPOSALS.md
+CS234_PROJECT_COMPARISON.md
+CS234_PROJECT_VISUAL_GUIDE.md
+CS234_EXECUTIVE_SUMMARY.md
+CS234_INDEX.md
+CS234_PRESENTATION_SCRIPT.md
+
+# LaTeX style files (standard packages, not project-specific)
+algorithm.sty
+algorithmic.sty
+fancyhdr.sty
+icml2018.bst
+icml2018.sty
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.snm
+*.nav
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+.venv/
+venv/
+
+# OS
+.DS_Store
