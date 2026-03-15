@@ -188,6 +188,6 @@ Expected runtime: ~5–10 minutes on CPU.
 If you use this code or data in your work, please cite the accompanying report:
 
 ```
-CS234: Reinforcement Learning, Stanford University, Winter 2026
-RL-Based Diagram Context Selection for RAG Systems
+Reinforcement Learning for Optimal Context Selection \\
+           in RAG-Enhanced Diagram Analysis Systems
 ```
